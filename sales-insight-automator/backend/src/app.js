@@ -14,8 +14,12 @@ const app = express();
 app.use(helmet());
 
 // ─── CORS Configuration ─────────────────────────────────────────────────────
+// WITH this:
 const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:5173',
+  'http://localhost',
+  'http://localhost:80',
+  'http://localhost:5173',
 ];
 
 app.use(
